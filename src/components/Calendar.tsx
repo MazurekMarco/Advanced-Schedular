@@ -105,6 +105,11 @@ const Calendar: React.FC<CalendarProps> = ({
     }
   };
 
+  const handleDateClick = (date: Date) => {
+    setDate(date);
+    setCurrentView('day');
+  };
+
   const renderCalendarDays = () => {
     const days = [];
     const monthDetails = getMonthDetails(date);

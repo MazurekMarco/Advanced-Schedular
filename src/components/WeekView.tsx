@@ -1,5 +1,5 @@
 import React from 'react';
-import { format, startOfWeek, addDays, parse, isSameDay } from 'date-fns';
+import { format, startOfWeek, addDays, isSameDay, isSameMonth, isToday } from 'date-fns';
 import { useEventStore } from '../store/eventStore';
 import { useThemeStore } from '../store/themeStore';
 

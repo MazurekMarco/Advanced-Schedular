@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useThemeStore } from './store/themeStore';
 import Calendar from './components/Calendar';
 import AddEventModal from './components/AddEventModal';

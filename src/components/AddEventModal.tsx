@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useEventStore } from '../store/eventStore';
 import { useThemeStore } from '../store/themeStore';
 import { useToastStore } from '../store/toastStore';

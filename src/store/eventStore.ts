@@ -12,7 +12,7 @@ interface Event {
 interface EventStore {
   events: Event[];
   addEvent: (event: Omit<Event, 'id'>) => void;
-  updateEvent: (id: string, event: Partial<Omit<Event, 'id'>>) => void;
+  updateEvent: (id: string, event: Omit<Event, 'id'>) => void;
   deleteEvent: (id: string) => void;
 }
 
@@ -50,9 +50,7 @@ export const useEventStore = create<EventStore>((set, get) => ({
     return { events: newEvents };
   }),
   updateEvent: (id, event) => set((state) => {
-    const newEvents = state.events.map((e) => 
-      e.id === id ? { ...e, ...event } : e
-    );
+    const newEvents = state.events.map((e) => (e.id === id ? { ...event, id } : e));
     localStorage.setItem('calendarEvents', JSON.stringify(newEvents.map(serializeEvent)));
     return { events: newEvents };
   }),
