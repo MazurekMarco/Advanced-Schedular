@@ -42,7 +42,7 @@ const loadEventsFromLocalStorage = (): Event[] => {
   return [];
 };
 
-export const useEventStore = create<EventStore>((set, get) => ({
+export const useEventStore = create<EventStore>((set) => ({
   events: loadEventsFromLocalStorage(),
   addEvent: (event) => set((state) => {
     const newEvents = [...state.events, { ...event, id: crypto.randomUUID() }];

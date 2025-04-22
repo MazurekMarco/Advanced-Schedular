@@ -75,7 +75,7 @@ const Calendar: React.FC<CalendarProps> = ({
     }
   };
 
-  const { daysInMonth, startingDay, totalWeeks } = getMonthDetails(date);
+  const monthDetails = getMonthDetails(date);
   const today = new Date();
   
   const isToday = (day: number) => {
@@ -105,14 +105,8 @@ const Calendar: React.FC<CalendarProps> = ({
     }
   };
 
-  const handleDateClick = (date: Date) => {
-    setDate(date);
-    setCurrentView('day');
-  };
-
   const renderCalendarDays = () => {
     const days = [];
-    const monthDetails = getMonthDetails(date);
     const totalCells = 42; // 6 weeks * 7 days to ensure we always have enough cells
 
     // Add empty cells for days before the first day of the month
